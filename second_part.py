@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 import re
 
-with open("index.html", "r") as f: # opening local html file
+with open("html/index.html", "r") as f: # opening local html file
 	doc = BeautifulSoup(f, "html.parser")
 
 # Basic usage of tags
@@ -27,5 +27,5 @@ tags0 = doc.find_all("input", type="text")
 for tag in tags0:
 	tag['placeholder'] = "I changed you!"
 
-with open("changed.html", "w") as file: # w mode creates or overrides
+with open("html/changed.html", "w") as file: # w mode creates or overrides
 	file.write(str(doc))
